@@ -5,4 +5,4 @@
 - **Panel** • [Waybar](https://aur.archlinux.org/packages/waybar-hyprland-git)🍧
   Patched waybar following hyprland faq!
 - **Launcher** • [Rofi](https://github.com/davatorium/rofi)
-- **Editor** • [NeoVim] Rice Editor
+- **Editor** • [NeoVim](https://neovim.io/)
