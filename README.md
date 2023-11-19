@@ -7,5 +7,4 @@
   Patched waybar following hyprland faq!
 - **Launcher** • [Rofi](https://github.com/davatorium/rofi) 🚀 Realmente rápido
   y customizable!
-- **GUI Basic-IDE** • [NvChad-V2](https://github.com/linuxmobile/nvchad-v2) Rice
-  IDE!
+- **Editor** • [Neovim](https://neovim.io/) hyperextensible Vim-based text editor
