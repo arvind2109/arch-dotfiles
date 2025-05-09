@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "height": 30,
+    "height": 40,
     "spacing": 5,
     // Choose the order of the modules
     "modules-left": [
@@ -10,19 +10,22 @@
         "hyprland/window"
     ],
     "modules-right": [
-				"tray",
+        "tray",
         "pulseaudio",
         "network",
         "battery",
-				"clock"
-		],
-		"hyprland/window": {
-			"separate-outputs": true
-		},
+        "cpu",
+        "memory",
+	"clock"
+    ],
+    "hyprland/window": {
+        "separate-outputs": true
+    },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "on-click":"activate"
+        "on-click": "activate",
+        "show-all": "true"
     },
     "tray": {
         // "icon-size": 21,
@@ -30,8 +33,8 @@
     },
 
     "clock": {
-        "tooltip-format": "{:%A, %B %d, %Y}",
-        "format": "{:%I:%M %p}"
+        "tooltip-format": "{:%d-%m-%Y   %I:%M %p}",
+        "format": "{:%d-%m-%Y   %I:%M %p}"
     },
 
     "upower": {
@@ -43,18 +46,26 @@
     "network": {
         "format-wifi": "󰤨    {essid}",
         "format-disconnected": "󰤭  Disconnected",
-				"tooltip-format": "Connected to {essid}",
-				"on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
+        "tooltip-format": "Connected to {essid}",
+        "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e nmtui'"
     },
     "pulseaudio": {
         "scroll-step": 2, // %, can be a float
         "format": "{icon}    {volume}%",
         "format-muted": "󰖁",
-				"format-icons": {
-					"default": ["", "", "󰕾"]
-				},
-				"tooltip-format": "{volume}% volume"
-		}
-}
+        "format-icons": {
+            "default": ["", "", "󰕾"]
+        },
+        "tooltip-format": "{volume}% volume"
+    },
+    "cpu": {
 
-// vim: ft=jsonc
+        "format": "    {usage}%",
+        "tooltip-format": "CPU Usage: {usage}%",
+        "on-click": "hyprctl dispatch exec '[float]' '$TERMINAL -e htop'"
+    },
+    "memory": {
+        "format": "▧   {used}/{total} GB",
+        "tooltip-format": "RAM Usage: {used}/{total} GB"
+    }
+}
