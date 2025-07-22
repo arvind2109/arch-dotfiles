@@ -1,9 +1,27 @@
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
-# Instant prompt for Powerlevel10k
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+typeset -g POWERLEVEL9K_FOREGROUND='#adadad'
+typeset -g POWERLEVEL9K_BACKGROUND='#161616'
+
+typeset -g POWERLEVEL9K_TIME_FOREGROUND='#cf6a4c'         # red
+typeset -g POWERLEVEL9K_TIME_BACKGROUND='#1b1b1b'
+
+typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='#71b9f8'     # cyan
+typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#1b1b1b'
+
+typeset -g POWERLEVEL9K_DIR_FOREGROUND='#597bc5'         # blue
+typeset -g POWERLEVEL9K_DIR_BACKGROUND='#1b1b1b'
+
+typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND='#99ad6a'   # green
+typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='#d8ad4c' # yellow
+typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='#cf6a4c' # red
+
+typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_FOREGROUND='#99ad6a'
+typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_BACKGROUND='#1b1b1b'
+typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_FOREGROUND='#cf6a4c'
+typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_BACKGROUND='#1b1b1b'
+
+eval "$(oh-my-posh init zsh)"
 
 # Homebrew (Linuxbrew) check on Linux Mint
 if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
@@ -42,8 +60,6 @@ zinit snippet OMZP::command-not-found
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 
-# Prompt config
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # Keybindings
 bindkey -e
